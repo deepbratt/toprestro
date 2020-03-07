@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.headerBg{
+  background:#f7f7f7 url('./assets/118-1186633_restaurant-clipart-restaurant-customer-restaurants-cartoon-png.png') no-repeat center;
+  min-height: 150px;
+  max-height: 200px;
+  opacity: 0.3;
+}
