@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect, useRef } from 'react';
 import {Table} from 'react-bootstrap';
 import {Pagination} from '../';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,9 +13,16 @@ export default function RestroList(props){
 
     useEffect(() => {
         setAllDataSet(props.Restro);
-        setCurrentDataSet([]);
         
     });
+
+    const usePrevCurrrentData = data => {
+        const ref = useRef();
+        useEffect(() => {
+            ref.data = data;
+        })
+        return ref.data;
+    }
 
     const setData = () => {
         const newDataSet = props.Restro;
@@ -34,7 +41,11 @@ export default function RestroList(props){
         const totalDataSet2 = allDataSet.length;
         setCurrentDataSet(zzcurrentDataSet);
         setTotalDataSet(totalDataSet2);
+
+        
     }
+    const prevcurrentData = usePrevCurrrentData(data);
+        console.log(prevcurrentData);
     return(
         <Fragment>
             <Table responsive striped bordered hover>
