@@ -65,6 +65,7 @@ export default class App extends Component {
   }
 
   render(){
+	  console.log('hello');
     const {Brand, allDataSet, Style, Country} = this.state;
     console.log(allDataSet);
     return (
